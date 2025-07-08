@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="h-screen flex justify-center items-center">
-      <div className="container text-center px-4">
+    <main className="h-screen flex justify-between items-center flex-col py-4 md:py-8">
+      <div className="container text-center px-4 flex-1 flex flex-col justify-center">
         <div className="flex gap-4 justify-center items-center mb-8">
           <Rocket size={32} className="glow-icon" />
           <h1 className="text-3xl font-bold text-white text-shadow-glow">
@@ -24,6 +24,15 @@ export default function Home() {
           </Button>
         </Link>
       </div>
+      <footer className="text-center text-gray-400 text-sm mt-12 max-w-4xl mx-auto">
+        <p>
+          “You want to wake up in the morning and think the future is going to
+          be great - and that’s what being a spacefaring civilization is all
+          about. It’s about believing in the future and thinking that the future
+          will be better than the past. And I can’t think of anything more
+          exciting than going out there and being among the stars.” -Elon Musk
+        </p>
+      </footer>
     </main>
   );
 }
