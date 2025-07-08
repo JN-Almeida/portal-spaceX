@@ -24,7 +24,7 @@ export default function Home() {
           </Button>
         </Link>
       </div>
-      <footer className="text-center text-gray-400 text-sm mt-12 max-w-4xl mx-auto">
+      <footer className="text-center text-gray-400 text-sm mt-12 max-w-4xl mx-auto px-4">
         <p>
           “You want to wake up in the morning and think the future is going to
           be great - and that’s what being a spacefaring civilization is all
