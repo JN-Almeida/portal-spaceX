@@ -25,7 +25,9 @@ export default function RootLayout({
       <body
         className={`${saira.variable} antialiased vsc-initialized`}
       >
-        <ApolloProviderWrapper>{children}</ApolloProviderWrapper>
+        <ApolloProviderWrapper>
+          <main>{children}</main>
+        </ApolloProviderWrapper>
       </body>
     </html>
   );

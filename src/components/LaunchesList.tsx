@@ -2,13 +2,7 @@
 import { useLaunches } from "@/hooks/use-launches";
 import { Loading } from "./loading";
 import { CircleAlert } from "lucide-react";
-import { Card, CardHeader, CardTitle } from "./ui/card";
-import Image from "next/image";
-import {
-  LaunchesCards,
-  LaunchesCardsSkeletonGrid,
-  LaunchesCardsSkeleton,
-} from "./LaunchesCards";
+import { LaunchesCards, LaunchesCardsSkeletonGrid } from "./LaunchesCards";
 import { useEffect, useRef, useState } from "react";
 import { Launch } from "@/types/spacex";
 
@@ -68,7 +62,7 @@ export function LaunchesList() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-        {displayedLaunches.map((launch: any) => (
+        {displayedLaunches.map((launch: Launch) => (
           <LaunchesCards key={launch.id} launch={launch} />
         ))}
       </div>

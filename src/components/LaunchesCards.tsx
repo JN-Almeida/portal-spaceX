@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Skeleton } from "./ui/skeleton";
 import { formatDate } from "@/utils/date-formatter";
 import Link from "next/link";
+import { Launch } from "@/types/spacex";
 
 export function LaunchesCardsSkeleton() {
   return (
@@ -45,10 +46,11 @@ export function LaunchesCardsSkeletonGrid({ count = 6 }: { count?: number }) {
   );
 }
 
-export function LaunchesCards({ launch }: { launch: any }) {
+export function LaunchesCards({ launch }: { launch: Launch }) {
   return (
     <Card
       key={launch.id}
+      data-testid="launch-card"
       className="w-full max-w-sm cursor-pointer group bg-gradient-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-400/50 hover:shadow-space-hover transition-all duration-300 hover:scale-102 hover:bg-gradient-to-br hover:from-gray-800/80 hover:to-gray-900/80 relative overflow-hidden"
     >
       <Link href={`/launches/${launch.id}`}>
@@ -63,7 +65,7 @@ export function LaunchesCards({ launch }: { launch: any }) {
                 src={
                   launch.links?.flickr_images?.[0] || "/assets/img-default.png"
                 }
-                alt={launch.mission_name}
+                alt={launch.mission_name || "Launch Image"}
                 width={120}
                 height={120}
                 className="relative w-28 h-28 object-cover rounded-xl border-2 border-gray-600/50 group-hover:border-cyan-400/50 transition-all duration-300"
@@ -87,7 +89,7 @@ export function LaunchesCards({ launch }: { launch: any }) {
                 </span>
               </div>
               <span className="text-sm text-white font-semibold">
-                {formatDate(launch.launch_date_utc)}
+                {formatDate(launch.launch_date_utc || "")}
               </span>
             </div>
           </div>

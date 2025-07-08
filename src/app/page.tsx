@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="h-screen flex justify-between items-center flex-col py-4 md:py-8">
+    <div className="h-screen flex justify-between items-center flex-col py-4 md:py-8">
       <div className="container text-center px-4 flex-1 flex flex-col justify-center">
         <div className="flex gap-4 justify-center items-center mb-8">
           <Rocket size={32} className="glow-icon" />
@@ -33,6 +33,6 @@ export default function Home() {
           exciting than going out there and being among the stars.” -Elon Musk
         </p>
       </footer>
-    </main>
+    </div>
   );
 }
